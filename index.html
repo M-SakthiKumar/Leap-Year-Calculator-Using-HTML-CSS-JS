@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year Calculator </title>
+    <link rel="icon" href="./ASSETS/LOGO.png">
+    <style>
+        body {
+            background-image: url(./ASSETS/b1.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+
+        .div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+           
+            background: transparent;
+            width: 330px;
+            height: 250px;
+            /* border: 1px solid rgba(230, 230, 21, 0.582); */
+            border: none;
+            border-radius: 10px;
+            margin: 200px  auto;
+            box-shadow: 10PX 10PX 32PX rgba(230, 230, 21, 0.582);
+            transition: border-color 0.3s;
+        }
+
+        .para {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            font-weight: bolder;
+            text-align: center;
+            color:black;
+        }
+
+        .head,
+        .head1 {
+            font-size: 15px;
+            font-weight: bold;
+            margin: 10px 70px;
+        }
+
+        input {
+            width: 170px;
+            height: 20px;
+            margin: 10px 70px;
+            /* padding-left: 20px; */
+            border: 2px solid rgba(49, 47, 47, 0.445);
+            border-radius: 5px;
+
+
+
+        }
+
+        button {
+            width: 200px;
+            height: 30px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 15px;
+            margin: 10px 70px;
+            cursor: pointer;
+
+
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .answ {
+            display: flex;
+        }
+
+        #button2 {
+            margin-left: -50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <div class="main">
+            <p class="para">LEAP YEAR CALCULATOR</p>
+            <p class="head">Enter the Year :</p>
+            <input id="num1" type="number" placeholder="Enter the Year">
+            <div class="answ"> <button onclick="cal()">Calculate</button>
+                <button id="button2" onclick="reset()">Reset</button>
+            </div>
+            <div class="ans">
+                <p class="head"> <span id="demo"> </span> </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+        function cal() {
+            var year, years
+            year = parseInt(document.getElementById("num1").value)
+            years
+            if (year % 4 == 0) {
+                years = `${year}is a Leap Year`
+            }
+
+            else  {
+                years = `${year} is  Not a  Leap Year`
+
+            }
+            
+            document.getElementById("demo").innerHTML = years
+
+
+        }
+
+        function reset() {
+
+            document.getElementById("num1").value = ""
+            document.getElementById("demo").innerHTML = ""
+
+
+        }
+        reset()
+    </script>
+
+
+</body>
+
+</html>
